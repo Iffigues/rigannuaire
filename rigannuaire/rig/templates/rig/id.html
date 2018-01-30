@@ -1,0 +1,26 @@
+{% extends 'rig/layout.html' %}
+{% load static %}
+{% block content %}
+<div class="row d-flex flex-column">
+  {% for album in talk %}
+  <div class="card p-2">
+    <div class="card-header">
+      <span>Firstname:  </span><span>{{album.name.fname}}</span></br>
+      <span>Lastname:  </span><span>{{album.name.lname}}</span></br>
+    </div>
+    <div class="card-body">
+      <span>Street number:  </span><span>{{album.street.nbrs}}</span></br>
+      <span>Street name:  </span><span>{{album.street.ns}}</span></br>
+      <span>Street type:  </span><span>{{album.street.ts}}</span></br>
+      <span>Country:  </span><span>{{album.country.nc}}</span></br>
+      <span>ZIP:  </span><span>{{album.country.cpc}}</span></br>
+      <span>Postal Code:  </span><span>{{album.country.nbrc}}</span></br>
+    </div>
+    <div class="card-footer">
+      <span>tel:  </span><span>{{album.tel}}</span></br
+    </div>
+  </div>
+  {% endfor %}
+ </div>
+{% endblock %}
+

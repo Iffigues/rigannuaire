@@ -1,0 +1,20 @@
+{% extends 'rig/search.html' %}
+{% load static %}
+{% block searcher %}
+<div class="container-fluid">
+  <h1>FIND SOMEBODY WHAT YOU WANT</h1>
+  <h2>find easy the best</h2>
+  <form class="form-inline collapse in" id="hahaer"  action="{% url 'rig:s' %}" method="post">
+    {% csrf_token %}
+    	
+  <label for="{{ form.name.id_for_label }}">
+    <!-- A SUPPRIMER <input type="text" name="name" value="" id="name"> -->
+    {{ form.lname }}
+
+   
+    <label for="{{ form.email.id_for_label }}">
+      <!-- A SUPPRIMER <input type="text" name="email" value="" id="email"> -->
+      {{ form.email }}
+      </form>
+</div>
+{% endblock %}

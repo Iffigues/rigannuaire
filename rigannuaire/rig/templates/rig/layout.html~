@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="{% static 'rig/css/apple-icon-57x57.png' %}">
+    <link rel="apple-touch-icon" sizes="60x60" href="{% static 'rig/css/apple-icon-60x60.png' %}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{% static 'rig/css/apple-icon-72x72.png' %}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{% static 'rig/css/apple-icon-76x76.png' %}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{% static 'rig/css/apple-icon-114x114.png' %}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{% static 'rig/css/apple-icon-120x120.png' %}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{% static 'rig/css/apple-icon-144x144.png' %}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{% static 'rig/css/apple-icon-152x152.png' %}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'rig/css/apple-icon-180x180.png' %}">
+    <link rel="icon" type="image/png" sizes="192x192"  href="{% static 'rig/css/android-icon-192x192.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'rig/css/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{% static 'rig/css/favicon-96x96.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static  'rig/css/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'rig/css/manifest.json' %}">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="{% static 'rig/css/ms-icon-144x144.png' %}">
+    <meta name="theme-color" content="#ffffff">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+     <!-- Latest compiled JavaScript -->
+    <link rel="stylesheet" type="text/css" href="{% static 'rig/css/style.css' %}" />
+    <title> {% block title %}{% endblock %}  | RigAnnuaire</title>
+  </head>
+  <body>
+    <div id="card">
+      <div id="card-header">
+    <nav class="navbar navbar-toggleable-md navbar-light bg-faded   jumbotron jumbotron-fluid rounded-bottom"  id="na">
+      <a class="navbar-brand well" href="#">Rig_Annuaire</a>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+	<ul class="navbar-nav mr-auto">
+	  <li class="nav-item active">
+	    <a class="nav-link well" href="/s">Search <span class="sr-only">(current)</span></a>
+	  </li>
+	  <li class="nav-item">
+	    <a class="nav-link" href="#">Annuaire</a>
+	  </li>
+	  <li class="nav-item">
+	    <a class="nav-link" href="#">Portofolio</a>
+	  </li>
+	  <li class="nav-item">
+	    <a class="nav-link" href="#">Blog</a>
+	  </li>
+	</ul>
+	<form class="form-inline my-2 my-lg-0">
+	  <input class="form-control mr-sm-2" type="text" style="background-color:#FF8833;" placeholder="Search">
+	  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+	</form>
+      </div>
+    </nav>
+      </div>
+      <div id="card-body">
+      <div class="container-fluid">
+	  {% block content %}{% endblock %}
+      </div>
+      </div>
+      <div id="card-footer"></div>
+      </div>
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  </body>
+</html>
