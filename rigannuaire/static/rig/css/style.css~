@@ -1,0 +1,22 @@
+body{
+    background-color:#FEFEFE;
+}
+
+.form-control{
+    background-color:#B33B24;
+}
+input[type="text"], textarea {
+
+    background-color : #d1d1d1;
+
+}
+
+#searcher{
+    background-color:  #ACBF60;
+    border-bottom-style: solid;
+}
+
+#na{
+    background-color: #FF6037;
+    margin: 0%;
+}

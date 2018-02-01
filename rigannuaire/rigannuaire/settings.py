@@ -20,14 +20,27 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '$_!(m1w&850k!$v8v826s^vm!pzl#ds8(vg1fbecsx9n)oi+7b'
+SECRET_KEY = '`V>KNoC>g~CVNgA$tBIEW#g^^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+if os.environ.get('ENV') == 'PRODUCTION':
+        DEBUG = False
+else:
+        DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
 
+if os.environ.get('ENV') == 'PRODUCTION':
+        # Static files settings
+        PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+        STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+        STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+        # Extra places for collectstatic to find static files.
+        STATICFILES_DIRS = (
+                os.path.join(PROJECT_ROOT, 'static'),
+                
+        )
 # Application definition
 
 INSTALLED_APPS = [
@@ -38,6 +51,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
 ]
 
 MIDDLEWARE = [
@@ -48,6 +62,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+        'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'rigannuaire.urls'
@@ -77,9 +92,9 @@ WSGI_APPLICATION = 'rigannuaire.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql', # on utilise l'adaptateur postgresql
-        'NAME': 'rigannuaire', # le nom de notre base de donnees creee precedemment
-        'USER': 'iffigues', # attention : remplacez par votre nom d'utilisateur
-        'PASSWORD': 'Petassia01',
+        'NAME': '', # le nom de notre base de donnees creee precedemment
+        'USER': '', # attention : remplacez par votre nom d'utilisateur
+        'PASSWORD': '',
         'HOST': 'localhost',
         'PORT': '5432',
             }
