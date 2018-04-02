@@ -79,8 +79,6 @@ class ContactForm(forms.Form):
     gender = forms.ChoiceField(
         label='gender',
         required=False,
-    #    widget=forms.HiddenInput(),
         choices=GENDER_TYPE,
     )
     
-    pass

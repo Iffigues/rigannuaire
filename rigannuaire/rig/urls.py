@@ -1,4 +1,4 @@
-from django.conf.urls import url
+from django.conf.urls import *
 from . import views # import views so we can use them in urls.
 app_name="rig"
 urlpatterns = [

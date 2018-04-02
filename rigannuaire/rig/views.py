@@ -2,18 +2,20 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
 from .forms import ContactForm
-#import coreapi
 import sys
 import math
 sys.path.append(".")
 import urllib3
+from urllib.request import Request, urlopen
+from requests.packages.urllib3.poolmanager import PoolManager
 import json
 from io import StringIO
 from . import Perso as vh
 
 def index(request):
     template = loader.get_template('rig/index.html')
-    return HttpResponse(template.render(request=request))
+    return render(request, 'rig/index.html')
+
 # Create your views here.
 
 def ids(request,ids):
@@ -63,19 +65,16 @@ def search(request):
             r = http.request(
                 'POST',
                 'http://annuaire.gopiko.fr/search',
-                body=encoded_data,
-                headers={'Content-Type': 'application/json'}
+                fields = fields,
+                headers = {'Content-Type': 'application/json'},
             )
             io = StringIO(r.data.decode("utf-8") )
             bb = json.load(io)
             if bb:
                 for cc in bb:
                     context['talk'].append(cc)
-                context['how']= math.ceil(len(context['talk'])/10)
-                print(context['how'])
         template = loader.get_template('rig/searchers.html')
         return render(request, 'rig/searchers.html', context)
-    
     template = loader.get_template('rig/searcher.html')
     return render(request, 'rig/searcher.html', context)
     

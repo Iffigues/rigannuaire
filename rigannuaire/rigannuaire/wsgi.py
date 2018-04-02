@@ -7,11 +7,15 @@ For more information on this file, see
 https://docs.djangoproject.com/en/2.0/howto/deployment/wsgi/
 """
 
-import os
-if path not in sys.path:
-    sys.path.append(path)
+import os,sys
+
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "rigannuaire.settings")
+
+sys.path.append('/home/iffigues/rig/rigannuaire')
+sys.path.append('/home/iffigues/rig/env/Lib/site-packages')
+
+
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'rigannuaire.settings')
 
 application = get_wsgi_application()

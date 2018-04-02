@@ -44,7 +44,8 @@ if os.environ.get('ENV') == 'PRODUCTION':
 # Application definition
 
 INSTALLED_APPS = [
-    'rig.apps.RigConfig',
+ #   'rig.apps.RigConfig',
+        'rig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -91,7 +92,7 @@ WSGI_APPLICATION = 'rigannuaire.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql', # on utilise l'adaptateur postgresql
+        'ENGINE': 'django.db.backends.postgresql_psycopg2', # on utilise l'adaptateur postgresql
         'NAME': '', # le nom de notre base de donnees creee precedemment
         'USER': '', # attention : remplacez par votre nom d'utilisateur
         'PASSWORD': '',
