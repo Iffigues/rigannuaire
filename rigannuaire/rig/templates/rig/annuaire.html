@@ -1,0 +1,22 @@
+{% extends 'rig/layout.html' %}
+{% load static %}
+{% block title %}
+annuaire
+{% endblock %}
+{% block content %}
+<div class="row">
+  <div class="col-sm-12">
+<ul class="breadcrumb">
+  <li class="breadcrumb-item"><a href="/a/ln">Lastname</a></li>
+  <li class="breadcrumb-item"><a href="/a/fn">FirstName</a></li>
+  <li class="breadcrumb-item"><a href="/a/city">City</a></li>
+  <li class="breadcrumb-item"><a href="/a/street">Street</a></li>
+  <li class="breadcrumb-item"><a href="/a/email">Email</a></li>
+  <li class="breadcrumb-item"><a href="/a/tel">Tel</a></li>
+  <li class="breadcrumb-item"><a href="/a/sigle">Sigle</a></li>
+  <li class="breadcrumb-item"><a href="/a/zip">Postal code</a></li>
+</ul>
+</div>
+</div>
+{% block annuaires %}{% endblock %}
+{% endblock %}

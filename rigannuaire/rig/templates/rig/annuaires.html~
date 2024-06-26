@@ -1,0 +1,17 @@
+{% extends 'rig/annuaire.html' %}
+{% load static %}
+{% block annuaires %}
+{% if lol == "" %}
+<ul class="list-group" >
+{% else %}
+<ul class="list-group" itemscope itemtype="{{lol.0}}">
+{% endif %}
+{% for album in talk %}
+{% if lol == ""%}
+<li class="list-group-item">{{album}}</li>
+{% else  %}
+<li class="list-group-item" itemprop="{{lol.1}}"><a href="/a/">{{album}}</a></li>
+{% endif %}
+{% endfor  %}
+</ul>
+{% endblock %}
